@@ -1,0 +1,138 @@
+body {
+  font-family: Roboto, 400;
+}
+
+h1 {
+  font-size: 70px;
+  color: black;
+}
+
+.current-button {
+  display: block;
+  margin: 0 auto;
+  font-size: 31px;
+  color: #86b7fe;
+  background: #fded04;
+  padding: 0 16px;
+  border: 3px solid #86b7fe;
+  border-radius: 5px;
+}
+
+.current-button:hover {
+  background: #fad609;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.weather-app {
+  border: 3px solid #86b7fe;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 70px auto;
+  max-width: 800px;
+}
+
+.search-form {
+  margin: 20px 0;
+}
+
+.city-name {
+  font-size: 32px;
+  padding: 0.6px 10px;
+}
+
+.btn-primary {
+  background: #749efc;
+  font-size: 32px;
+  color: #fded04;
+  padding: 0;
+  border: 3px solid #fad609;
+}
+.btn:hover {
+  color: #fded04;
+  border: 3px solid #fad609;
+}
+
+.current-temperature {
+  font-size: 70px;
+  margin: 0;
+  padding: 0;
+}
+
+i.current-temperature-icon {
+  font-size: 90px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.units {
+  position: relative;
+  top: -32px;
+  left: 0;
+  font-size: 32px;
+  padding: 0;
+  margin: 0;
+}
+
+.col-7 {
+  padding-right: 0;
+}
+.col-5 {
+  padding-left: 0;
+}
+
+.current-range {
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+
+.current-indicators {
+  font-size: 24px;
+  font-weight: bold;
+  list-style-type: none;
+  margin-top: 8px;
+}
+
+.sun-icon {
+  color: #ffa600;
+  font-size: 50px;
+}
+.cloud-icon {
+  color: #b3bfcc;
+  font-size: 50px;
+}
+
+.cloud-rain {
+  color: #b3bfcc;
+  font-size: 50px;
+}
+
+.snow-icon {
+  color: #86b7fe;
+  font-size: 50px;
+}
+
+.cloud-sun-icon {
+  color: #e7c52b;
+  font-size: 50px;
+}
