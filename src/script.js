@@ -23,25 +23,25 @@ let cities = {
   },
 };
 
-let city = prompt("Enter the city name");
+//let city = prompt("Enter the city name");
 
-city = city.trim();
+//city = city.trim();
 
-city = city.toLowerCase();
+//city = city.toLowerCase();
 
-if (cities[city] !== undefined) {
-  let tempC = Math.round(cities[city].temp);
+//if (cities[city] !== undefined) {
+//let tempC = Math.round(cities[city].temp);
 
-  let tempF = Math.round((cities[city].temp * 9) / 5 + 32);
+//let tempF = Math.round((cities[city].temp * 9) / 5 + 32);
 
-  alert(
-    `It is currently ${tempC}°C/${tempF}°F in ${city} with humidity of ${cities[city].humidity}%`
-  );
-} else {
-  alert(
-    `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-  );
-}
+//alert(
+//`It is currently ${tempC}°C/${tempF}°F in ${city} with humidity of ${cities[city].humidity}%`
+//);
+//} else {
+//alert(
+// `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
+//);
+//}
 
 //  Feature 1 (week 4)🔽
 
@@ -73,7 +73,7 @@ let currentDayTime = document.querySelector("#current-day-time");
 
 currentDayTime.innerHTML = `${day}  ${hours}:${minutes}`;
 
-//  Feature 2(week4)🔽  +  My task (week 5)🔽 + Bonus point🔽
+//  Feature 2 (week 4)🔽  +  My task (week 5)🔽 + Bonus point🔽
 
 function showCityTemperature(event) {
   event.preventDefault();
@@ -137,7 +137,7 @@ searchForm.addEventListener("submit", showCityTemperature);
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
 
-//  Bonus Feature🔽 - temperature conversion (now my conversion doesn't work, it need to correct and finalize)
+//  Bonus Feature (week 4)🔽 - temperature conversion (now my conversion doesn't work, it needs to be corrected and finalized)
 
 function displayTemp(event) {
   event.preventDefault();
