@@ -28,10 +28,6 @@ h2 {
   padding-bottom: 20px;
 }
 
-h3 {
-  text-align: center;
-}
-
 h5 {
   font-weight: bold;
 }
@@ -139,4 +135,8 @@ i.current-temperature-icon {
 .cloud-sun-icon {
   color: #e7c52b;
   font-size: 50px;
+}
+
+.links {
+  text-align: center;
 }
