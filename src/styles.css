@@ -43,11 +43,16 @@ a:hover {
   text-decoration: underline;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .weather-app {
   border: 3px solid #86b7fe;
   border-radius: 10px;
   padding: 20px;
-  margin: 70px auto 30px;
+  margin: 70px auto 10px;
   max-width: 800px;
 }
 
