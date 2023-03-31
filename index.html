@@ -26,11 +26,8 @@
     <div class="container">
 
         <div class="weather-app">
-
             <form class="search-form" id="search-form">
-
                 <div class="row">
-
                     <div class="col-6">
                         <input type="search" placeholder="City name" autofocus="on"
                             class="form-control city-name shadow-sm border-3" id="city-name-input" />
@@ -48,17 +45,21 @@
             </form>
 
 
-            <h1>Kyiv</h1>
-
+            <h1>
+                Kyiv
+            </h1>
 
             <div class="row">
                 <div class="col-7">
+                    <h2 id="current-day-time">
+                        Sunday 06:00
+                    </h2>
 
-                    <h2 id="current-day-time"></h2>
+                    <i class="fa-solid fa-cloud-sun cloud-sun-icon current-temperature-icon"></i>
 
-                    <i class="fa-solid fa-cloud-sun cloud-sun-icon current-temperature-icon" id="icon"></i>
-
-                    <span class="current-temperature" id="current-temperature"></span>
+                    <span class="current-temperature" id="current-temperature">
+                        3
+                    </span>
 
                     <span class="units"> <a href="#" id="celsius-link">°C</a>/<a href="#" id="fahrenheit-link">°F</a>
                     </span>
