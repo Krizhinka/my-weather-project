@@ -80,14 +80,9 @@ a:hover {
 
 .current-temperature {
   font-size: 70px;
+  font-weight: normal;
   margin: 0;
   padding: 0;
-}
-
-i.current-temperature-icon {
-  font-size: 90px;
-  padding-right: 10px;
-  margin: 0;
 }
 
 .units {

@@ -1,4 +1,3 @@
-
 let now = new Date();
 
 let currentDay = now.getDay();
@@ -27,7 +26,6 @@ if (minutes < 10) {
 let currentDayTime = document.querySelector("#current-day-time");
 
 currentDayTime.innerHTML = `${day}  ${hours}:${minutes}`;
-
 
 function showCityTemperature(event) {
   event.preventDefault();
@@ -62,9 +60,15 @@ function showTemperature(response) {
   ).innerHTML = `Humidity - ${response.data.main.humidity} %`;
   document.querySelector("#wind").innerHTML = `Wind - ${Math.round(
     response.data.wind.speed
-  )} km/h`;
-}
+  )} m/s`;
 
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+}
 
 function showPosition(position) {
   let lat = position.coords.latitude;

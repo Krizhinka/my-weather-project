@@ -46,23 +46,22 @@
 
 
             <h1>
-                Kyiv
+                City
             </h1>
 
             <div class="row">
                 <div class="col-7">
-                    <h2 id="current-day-time">
-                        Sunday 06:00
-                    </h2>
+                    <h2 id="current-day-time"></h2>
 
-                    <i class="fa-solid fa-cloud-sun cloud-sun-icon current-temperature-icon"></i>
-
-                    <span class="current-temperature" id="current-temperature">
-                        3
-                    </span>
-
-                    <span class="units"> <a href="#" id="celsius-link">°C</a>/<a href="#" id="fahrenheit-link">°F</a>
-                    </span>
+                    <div class="d-flex weather-temperature">
+                        <img src="" alt="" id="icon" />
+                        <div>
+                            <strong class="current-temperature" id="current-temperature"></strong>
+                            <span class="units"> <a href="#" id="celsius-link">°C</a>/<a href="#"
+                                    id="fahrenheit-link">°F</a>
+                            </span>
+                        </div>
+                    </div>
 
                     <div class="current-range">
                         -4°+3°
@@ -71,11 +70,11 @@
 
                 <div class="col-5">
                     <ul class="current-indicators">
-                        <li id="description">Sun-Clouds</li>
+                        <li id="description">Description</li>
                         <br />
                         <li id="humidity">Humidity - 73%</li>
                         <br />
-                        <li id="wind">Wind - 18 km/h</li>
+                        <li id="wind">Wind - 18 m/s</li>
 
 
                     </ul>
