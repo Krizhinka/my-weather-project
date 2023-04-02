@@ -52,6 +52,8 @@ function showTemperature(response) {
     response.data.main.temp
   );
 
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 
@@ -90,28 +92,29 @@ searchForm.addEventListener("submit", showCityTemperature);
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
 
-//  Bonus Feature (week 4)🔽 - Temperature conversion (now my conversion doesn't work, it needs to be corrected and finalized)
-
-function displayTemp(event) {
+function displayFahrenheitTemperature(event) {
   event.preventDefault();
 
-  let temperatureC = ((temperatureF - 32) * 5) / 9;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 
-  let temperatureF = (temperatureC * 9) / 5 + 32;
-
-  let linkC = document.querySelector("#celsius-link");
-
-  let linkF = document.querySelector("#fahrenheit-link");
-
-  if ("click" === linkC) {
-    //currentTemperature = ((temperatureF - 32) * 5) / 9;
-    currentTemperature.innerHTML = temperatureC;
-  } else {
-    //currentTemperature = (temperatureC * 9) / 5 + 32;
-    currentTemperature.innerHTML = temperatureF;
-  }
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let currentTemperature = document.querySelector("#current-temperature");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-currentTemperature.addEventListener("click", displayTemp);
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
