@@ -111,15 +111,6 @@ a:hover {
   padding-left: 0;
 }
 
-/* 
-.current-range {
-  font-size: 36px;
-  font-weight: bold;
-  padding-bottom: 50px;
-}
-
-*/
-
 .current-indicators {
   font-size: 24px;
   font-weight: bold;
@@ -143,32 +134,7 @@ a:hover {
   font-weight: bold;
 }
 
-/*  
-.sun-icon {
-  color: #ffa600;
-  font-size: 50px;
-}
-.cloud-icon {
-  color: #b3bfcc;
-  font-size: 50px;
-}
 
-.cloud-rain {
-  color: #b3bfcc;
-  font-size: 50px;
-}
-
-.snow-icon {
-  color: #86b7fe;
-  font-size: 50px;
-}
-
-.cloud-sun-icon {
-  color: #e7c52b;
-  font-size: 50px;
-}
-
-*/
 
 .links {
   text-align: center;

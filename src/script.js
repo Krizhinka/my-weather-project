@@ -10,26 +10,33 @@ let days = [
   "Thusday",
   "Friday",
   "Saturday",
-]; //from 0 to 6
+]; // from 0 to 6
 
 let day = days[now.getDay()];
 
 let hours = now.getHours();
+
 if (hours < 10) {
   hours = `0${hours}`;
 }
 
 let minutes = now.getMinutes();
+
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+
 let currentDayTime = document.querySelector("#current-day-time");
 
 currentDayTime.innerHTML = `${day}  ${hours}:${minutes}`;
 
 function search(city) {
-  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let units = "metric";
+
+  let apiKey = "c819171fe0abdc14039af4ef5dda283b";
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -37,6 +44,7 @@ function showCityTemperature(event) {
   event.preventDefault();
 
   let h1 = document.querySelector("h1");
+
   let cityName = document.querySelector("#city-name-input").value;
 
   h1.innerHTML = cityName;
@@ -54,6 +62,7 @@ function showTemperature(response) {
   console.log(response);
 
   document.querySelector("h1").innerHTML = response.data.name;
+
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -82,10 +91,15 @@ function showTemperature(response) {
 
 function showPosition(position) {
   let lat = position.coords.latitude;
+
   let lon = position.coords.longitude;
+
   let units = "metric";
+
   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
+
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -95,46 +109,21 @@ function getCurrentLocation(event) {
 }
 
 let searchForm = document.querySelector("#search-form");
+
 searchForm.addEventListener("submit", showCityTemperature);
 
 let currentButton = document.querySelector("#current-button");
+
 currentButton.addEventListener("click", getCurrentLocation);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function getForecast(coordinates) {
   console.log(coordinates);
 
+  let units = "metric";
+
   let apiKey = "c819171fe0abdc14039af4ef5dda283b";
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
 
   console.log(apiUrl);
 
@@ -146,7 +135,7 @@ function formatDay(timestamp) {
 
   let day = date.getDay();
 
-  let days = ["Sun", "Mon", "Tue", "WEd", "Thu", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
 }
@@ -159,6 +148,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
+    // from 0 to 7
     if (index < 6) {
       forecastHTML =
         forecastHTML +
@@ -188,5 +178,4 @@ function displayForecast(response) {
   console.log(forecastHTML);
 }
 
-
-search("kyiv");
+search("Kyiv");
